@@ -46,7 +46,7 @@ $(document).keydown(function(e) {
 
 function senddata(){
 
-theinput = $('#txt').txt;
+theinput = $('#txt').val();
 $.ajax({
 			url: "http://192.168.0.2/circulations/dademoapp/addentry.cfm",
 			type: "POST",
