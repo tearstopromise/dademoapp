@@ -16,11 +16,13 @@
   <div data-role="main" class="ui-content">
     <p>I Am Now A Mobile Developer!!</p>
 	<input type="text" id="txt" autofocus style="font-size:22px;font-weight:bold;text-align:center;" />
+	<button onclick="senddata();">Lets do this</button>
+	<span id="status"></span>
   </div>
 
-  <div data-role="footer">
+  <!-- <div data-role="footer">
     <h1>Footer Text</h1>
-  </div>
+  </div> -->
 </div> 
 
 </body>
@@ -36,6 +38,14 @@ $(document).keydown(function(e) {
 			if ((e.which == '13'))
 			{
 			
+
+		senddata();
+		
+		}
+});
+
+function senddata(){
+
 theinput = $('#txt').txt;
 $.ajax({
 			url: "http://192.168.0.2/circulations/dademoapp/addentry.cfm",
@@ -43,15 +53,15 @@ $.ajax({
 			data: {theinput:theinput},
 			success: function(){
 					console.log('ok');
+					$('#status').text('success');
 			},
 				 error: function(){
 					console.log('not ok');
+					$('#status').text('fail');
 					},timeout:5000
 		});
 		
-		
 		}
-});
 
 		</script>
 </html>
