@@ -54,10 +54,12 @@ $.ajax({
 			success: function(){
 					console.log('ok');
 					$('#status').text('success');
+					$('#txt').val('');
 			},
 				 error: function(){
 					console.log('not ok');
 					$('#status').text('fail');
+					$('#txt').val('');
 					},timeout:5000
 		});
 		
